@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 
 public class MenuButtonsManager : MonoBehaviour
 {
-    public GameObject messageBox;
+    public GameObject messageBox, gameOver, gameWin;
 
     public void PlayButton()
     {
@@ -26,5 +26,20 @@ public class MenuButtonsManager : MonoBehaviour
     public void OKButton()
     {
         messageBox.SetActive(false);
+    }
+
+    public void OKButton2()
+    {
+        gameOver.SetActive(false);
+    }
+    
+    public void OKButton3()
+    {
+        gameWin.SetActive(false);
+    }
+
+    public void RestartButton()
+    {
+        SceneManager.LoadScene(1);
     }
 }

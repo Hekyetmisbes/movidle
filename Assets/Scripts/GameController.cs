@@ -23,8 +23,8 @@ public class GameController : MonoBehaviour
 
     public TMP_InputField input;
 
-    public GameObject messageBox, gameOverBox;
-    public TextMeshProUGUI gameover;
+    public GameObject messageBox, gameOverBox, gameWinBox;
+    public TextMeshProUGUI gameover, gameWin;
 
     public int correctAnswer;
 
@@ -82,7 +82,7 @@ public class GameController : MonoBehaviour
 
         Film kullaniciFilm = KullaniciFilmiBul(filmListesi, input.text);
         Debug.LogError("Bilgisayar Seçimi: " + secilenFilm.filmAdi + "\n" + secilenFilm.tur + "\n" + secilenFilm.yil + "\n" + secilenFilm.yonetmen + "\n" + secilenFilm.ulke + "\n" + secilenFilm.yildiz);
-        
+
         if (kullaniciFilm == null)
         {
             messageBox.SetActive(true);
@@ -97,136 +97,210 @@ public class GameController : MonoBehaviour
                     name0.SetActive(true);
                     tname0.text = kullaniciFilm.filmAdi;
                     if (string.Equals(kullaniciFilm.filmAdi, secilenFilm.filmAdi, StringComparison.OrdinalIgnoreCase))
+                    {
                         name0.GetComponent<SpriteRenderer>().color = colour;
+                        counter++;
+                    }
                     else
                         name0.GetComponent<SpriteRenderer>().color = colour2;
 
                     year0.SetActive(true);
                     tyear0.text = kullaniciFilm.yil;
                     if (kullaniciFilm.yil == secilenFilm.yil)
+                    {
                         year0.GetComponent<SpriteRenderer>().color = colour;
+                        counter++;
+                    }
                     else
                         year0.GetComponent<SpriteRenderer>().color = colour2;
-                    
+
                     country0.SetActive(true);
                     tcountry0.text = kullaniciFilm.ulke;
                     if (kullaniciFilm.ulke == secilenFilm.ulke)
+                    {
                         country0.GetComponent<SpriteRenderer>().color = colour;
+                        counter++;
+                    }
                     else
                         country0.GetComponent<SpriteRenderer>().color = colour2;
-                    
+
                     type0.SetActive(true);
                     ttype0.text = kullaniciFilm.tur;
                     if (kullaniciFilm.tur == secilenFilm.tur)
+                    {
                         type0.GetComponent<SpriteRenderer>().color = colour;
+                        counter++;
+                    }
                     else
                         type0.GetComponent<SpriteRenderer>().color = colour2;
-                    
+
                     star0.SetActive(true);
                     tstar0.text = kullaniciFilm.yildiz;
                     if (kullaniciFilm.yildiz == secilenFilm.yildiz)
+                    {
                         star0.GetComponent<SpriteRenderer>().color = colour;
+                        counter++;
+                    }
                     else
                         star0.GetComponent<SpriteRenderer>().color = colour2;
-                    
+
                     director0.SetActive(true);
                     tdirector0.text = kullaniciFilm.yonetmen;
                     if (kullaniciFilm.yonetmen == secilenFilm.yonetmen)
+                    {
                         director0.GetComponent<SpriteRenderer>().color = colour;
+                        counter++;
+                    }
                     else
                         director0.GetComponent<SpriteRenderer>().color = colour2;
                     count++;
+                    if (counter == 6)
+                    {
+                        gameWinBox.SetActive(true);
+                    }
+                    else
+                        counter = 0;
                     break;
                 case 1:
                     name1.SetActive(true);
                     tname1.text = kullaniciFilm.filmAdi;
                     if (string.Equals(kullaniciFilm.filmAdi, secilenFilm.filmAdi, StringComparison.OrdinalIgnoreCase))
+                    {
                         name1.GetComponent<SpriteRenderer>().color = colour;
+                        counter++;
+                    }
                     else
                         name1.GetComponent<SpriteRenderer>().color = colour2;
-                    
+
                     year1.SetActive(true);
                     tyear1.text = kullaniciFilm.yil;
                     if (kullaniciFilm.yil == secilenFilm.yil)
+                    {
                         year1.GetComponent<SpriteRenderer>().color = colour;
+                        counter++;
+                    }
                     else
                         year1.GetComponent<SpriteRenderer>().color = colour2;
-                    
+
                     country1.SetActive(true);
                     tcountry1.text = kullaniciFilm.ulke;
                     if (kullaniciFilm.ulke == secilenFilm.ulke)
+                    {
                         country1.GetComponent<SpriteRenderer>().color = colour;
+                        counter++;
+                    }
                     else
                         country1.GetComponent<SpriteRenderer>().color = colour2;
-                    
+
                     type1.SetActive(true);
                     ttype1.text = kullaniciFilm.tur;
                     if (kullaniciFilm.tur == secilenFilm.tur)
+                    {
                         type1.GetComponent<SpriteRenderer>().color = colour;
+                        counter++;
+                    }
                     else
                         type1.GetComponent<SpriteRenderer>().color = colour2;
-                    
+
                     star1.SetActive(true);
                     tstar1.text = kullaniciFilm.yildiz;
                     if (kullaniciFilm.yildiz == secilenFilm.yildiz)
+                    {
                         star1.GetComponent<SpriteRenderer>().color = colour;
+                        counter++;
+                    }
                     else
                         star1.GetComponent<SpriteRenderer>().color = colour2;
-                    
+
                     director1.SetActive(true);
                     tdirector1.text = kullaniciFilm.yonetmen;
                     if (kullaniciFilm.yonetmen == secilenFilm.yonetmen)
+                    {
                         director1.GetComponent<SpriteRenderer>().color = colour;
+                        counter++;
+                    }
                     else
                         director1.GetComponent<SpriteRenderer>().color = colour2;
                     count++;
+                    if (counter == 6)
+                    {
+                        gameWinBox.SetActive(true);
+                    }
+                    else
+                        counter = 0;
                     break;
                 case 2:
                     name2.SetActive(true);
                     tname2.text = kullaniciFilm.filmAdi;
                     if (string.Equals(kullaniciFilm.filmAdi, secilenFilm.filmAdi, StringComparison.OrdinalIgnoreCase))
+                    {
                         name2.GetComponent<SpriteRenderer>().color = colour;
+                        counter++;
+                    }
                     else
                         name2.GetComponent<SpriteRenderer>().color = colour2;
-                    
+
                     year2.SetActive(true);
                     tyear2.text = kullaniciFilm.yil;
                     if (kullaniciFilm.yil == secilenFilm.yil)
+                    {
                         year2.GetComponent<SpriteRenderer>().color = colour;
+                        counter++;
+                    }
                     else
                         year2.GetComponent<SpriteRenderer>().color = colour2;
-                    
+
                     country2.SetActive(true);
                     tcountry2.text = kullaniciFilm.ulke;
                     if (kullaniciFilm.ulke == secilenFilm.ulke)
+                    {
                         country2.GetComponent<SpriteRenderer>().color = colour;
+                        counter++;
+                    }
                     else
                         country2.GetComponent<SpriteRenderer>().color = colour2;
-                    
+
                     type2.SetActive(true);
                     ttype2.text = kullaniciFilm.tur;
                     if (kullaniciFilm.tur == secilenFilm.tur)
+                    {
                         type2.GetComponent<SpriteRenderer>().color = colour;
+                        counter++;
+                    }
                     else
                         type2.GetComponent<SpriteRenderer>().color = colour2;
-                    
+
                     star2.SetActive(true);
                     tstar2.text = kullaniciFilm.yildiz;
                     if (kullaniciFilm.yildiz == secilenFilm.yildiz)
+                    {
                         star2.GetComponent<SpriteRenderer>().color = colour;
+                        counter++;
+                    }
                     else
                         star2.GetComponent<SpriteRenderer>().color = colour2;
-                    
+
                     director2.SetActive(true);
                     tdirector2.text = kullaniciFilm.yonetmen;
                     if (kullaniciFilm.yonetmen == secilenFilm.yonetmen)
+                    {
                         director2.GetComponent<SpriteRenderer>().color = colour;
+                        counter++;
+                    }
                     else
                         director2.GetComponent<SpriteRenderer>().color = colour2;
-                    
+
                     count++;
-                    gameOverBox.SetActive(true);
-                    gameover.text = "Kaybettiniz." + "\n" + "Doðru Cevap: " + secilenFilm.filmAdi;
+                    if (counter == 6)
+                    {
+                        gameWinBox.SetActive(true);
+                    }
+                    else
+                    {
+                        gameOverBox.SetActive(true);
+                        gameover.text = "Kaybettiniz." + "\n" + "Doðru Cevap: " + secilenFilm.filmAdi;
+                        counter = 0;
+                    }
                     break;
                 default:
                     Debug.Log("Countta Sýkýntý Var.");
